@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>TESTING</title>
+  </head>
+  <body>
+    <p>Database info:</p>
+    <p> Short url | Created time
+    {% for url in tplt_url %}
+      <p>{{url}}</p>
+      <p></p>
+    {% endfor %}
+
+    <p></p>
+    <form action="http://127.0.0.1:5000/home" method="POST">
+      <input type="submit" value="home">
+    </form>
+    <p></p>
+  </body>
+</html>

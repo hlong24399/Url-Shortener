@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>TESTING</title>
+  </head>
+  <body>
+    <p>Database info:</p>
+    {% for url in tplt_data %}
+      <p>id is {{url.id}}</p>
+      <p>original url is {{url.original_url}}</p>
+      <p>short url is {{url.short_url}}</p>
+    {% endfor %}
+    <p></p>
+    <p></p>
+  </body>
+</html>

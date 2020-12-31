@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>My Web Page!</title>
+  </head>
+  <body>
+    <p>Enter your url to be shortened: </p>
+    <form action="http://127.0.0.1:5000/shortening" method="POST">
+      <input type="text" name="tplt_url">
+      <input type="submit"  value="CONVERT">
+    </form>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+    </ul>
+
+    <p>If you want to see the result of the urlshortener, click here:</p>
+    <form action="http://127.0.0.1:5000/list" method="POST">
+      <input type="submit" name = "tpl_do" value = "My SHORT url">
+    </form>
+
+    <p>Find your url here</p>
+    <form action="http://127.0.0.1:5000/f" method="POST">
+      <input type="text" name="tplt_findurl">
+      <input type="submit" value="FIND">
+    </form>
+
+
+
+  </body>
+</html>
