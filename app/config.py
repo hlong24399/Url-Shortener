@@ -10,10 +10,3 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     GOOGLE_CLIENT_ID= "9896625773-58htbba524eo6aoiqeec046ko9mohpok.apps.googleusercontent.com" or os.environ.get("GOOGLE_CLIENT_ID")
     GOOGLE_CLIENT_SECRET= "MtbjjO4_QXgs1cSLqJ-B_hWP" or  os.environ.get("GOOGLE_CLIENT_SECRET")
-
-    print(CONFIG_URL)
-    print(SECRET_KEY)
-    print(SQLALCHEMY_DATABASE_URI)
-    print(SQLALCHEMY_TRACK_MODIFICATIONS)
-    print(GOOGLE_CLIENT_ID)
-    print(GOOGLE_CLIENT_SECRET)

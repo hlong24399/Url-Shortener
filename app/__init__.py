@@ -35,7 +35,6 @@ def login():
 def auth():
     token = oauth.google.authorize_access_token()
     user = oauth.google.parse_id_token(token)
-    flash(f"token is {user}")
     session['user'] = user
     return redirect('/home')
 
