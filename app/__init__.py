@@ -15,10 +15,9 @@ from authlib.integrations.flask_client import OAuth
 app = Flask(__name__)
 app.config.from_object(Config)
 app.cli.add_command(create_db)
-print('http://127.0.0.1:5000/login')
 db.init_app(app)
 
-#g  et environment variable
+#get environment variable
 CONF_URL = Config.CONFIG_URL
 
 #set up oauth
@@ -26,11 +25,12 @@ oauth = OAuth(app)
 oauth.register(name ='google', server_metadata_url=CONF_URL, client_kwargs={'scope': 'openid email profile'})
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     return oauth.google.authorize_redirect(url_for('auth', _external=True))
 
- #authentication
+#authentication
 @app.route('/auth')
 def auth():
     token = oauth.google.authorize_access_token()
@@ -39,10 +39,10 @@ def auth():
     return redirect('/home')
 
 #display home page
-@app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     return render_template('home.html')
+
 #display list page
 @app.route('/list', methods=['GET', 'POST'])
 def listing():

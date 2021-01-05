@@ -12,7 +12,8 @@ I use dotenv to manipulate environment variable, a .env file must be created in 
 
 .env file should look like:
 
-```FLASK_APP=app
+```
+FLASK_APP=app
 FLASK_SECRET_KEY=<secretkey>
 FLASK_ENV=development
 OAUTHLIB_INSECURE_TRANSPORT=true
