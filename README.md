@@ -1,13 +1,12 @@
-# Url Shortener
+# URL Shortener
 
-Using Flask framework, I create a local host web service that will take in any urls and store them in sqlite database using Flask-Sqlalchemy with their short url. The short url also can be used to retrieve the original one. The app also requires authentication using Oauth 2.0 google authentication (Auth_lib).
 
-# Install requirement
+## Install requirement
 Execute the command below to install requirement packages:
 
 ```pip3 install -r requirements.txt```
 
-# Configuration
+## Configuration
 I use dotenv to manipulate environment variable, a .env file must be created in order to run the app.
 
 .env file should look like:
@@ -24,12 +23,20 @@ DATABASE_URL=sqlite:///googleauth.sqlite3
 ```
 
 
-# Run the app
+## Run the app
 
-Create database table for ORM:
+1. Create the database
 
 ``` flask create_db ```
 
-Run the app:
+2. Run the app
 
 ```flask run```
+
+## Demo
+
+![image](demo-image/login.png)
+![image](demo-image/consentpage2.png)
+![image](demo-image/homepage.png)
+![image](demo-image/shortened.png)
+![image](demo-image/database.png)
