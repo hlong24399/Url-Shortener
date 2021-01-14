@@ -1,5 +1,6 @@
 # URL Shortener
 
+* Built by Flask and SQLalchemy framework.
 
 ## Install requirement
 Execute the command below to install requirement packages:
