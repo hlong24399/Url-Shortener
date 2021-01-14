@@ -7,9 +7,9 @@ import math as m
 from collections import deque
 import numpy as np
 from sqlalchemy.exc import IntegrityError
-from flask_dance.contrib.google import make_google_blueprint, google
 from authlib.integrations.flask_client import OAuth
 
+CONF_URL = 'https://accounts.google.com/.well-known/openid-configuration'
 
 #set up flask
 app = Flask(__name__)
@@ -17,25 +17,25 @@ app.config.from_object(Config)
 app.cli.add_command(create_db)
 db.init_app(app)
 
-#get environment variable
-CONF_URL = Config.CONFIG_URL
 
 #set up oauth
 oauth = OAuth(app)
 oauth.register(name ='google', server_metadata_url=CONF_URL, client_kwargs={'scope': 'openid email profile'})
 
+@app.route('/')
+def index():
+    return render_template('login.html')
 
 @app.route('/login', methods=['GET', 'POST'])
-@app.route('/', methods=['GET', 'POST'])
 def login():
-    return oauth.google.authorize_redirect(url_for('auth', _external=True))
+    redirect_url = url_for('auth', _external=True)
+    return oauth.google.authorize_redirect(redirect_url)
 
 #authentication
 @app.route('/auth')
 def auth():
     token = oauth.google.authorize_access_token()
     user = oauth.google.parse_id_token(token)
-    session['user'] = user
     return redirect('/home')
 
 #display home page
@@ -118,6 +118,7 @@ def test():
     db.session.commit()
     return render_template('test.html', tplt_data = ShortUrl.query.all())
 
+#delete the id when needed
 @app.route('/delete/<id>')
 def delete(id):
     rec = ShortUrl.query.get(int(id))
