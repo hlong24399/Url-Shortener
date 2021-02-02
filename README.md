@@ -2,7 +2,7 @@
 
 * Simple API that will generate Short Url (base-62 converting).
 
-* This API utilizes Flask and Flask-SQLAlchemy framework. User input will be stored in `short-url.sqlite3` database.
+* This API utilizes Flask and Flask-SQLAlchemy framework. User input will be stored in `short-url` database.
 
 * For easy use, `click` and `flask-cli` are integrated to make terminal command to create the data table. 
 
@@ -26,7 +26,7 @@ Execute the command below to install requirement packages:
 * `dotenv` is used to work with environment variable, .env file must be created in `app/`.
 
 
-.env file should look like:
+* `.env` file should look like:
 
 ```
 FLASK_APP=app
@@ -40,7 +40,7 @@ DATABASE_URL=sqlite:///short-url.sqlite3
 ```
 
 
-## Run the app
+## Execution
 
 1. Create the database
 
