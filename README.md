@@ -1,6 +1,6 @@
 # URL Shortener
 
-* Simple API that will generate Short Url (base-62 converting).
+* Simple API that will generate encrypted Short Url.
 
 * This API utilizes Flask and Flask-SQLAlchemy framework. User input will be stored in `short-url` database.
 
