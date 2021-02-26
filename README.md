@@ -19,7 +19,7 @@ Execute the command below to install requirement packages:
 
 ## Configuration
 
-* You need to obtain OAuth 2.0 client credentials from the [Google API Console Platform](https://developers.google.com/identity/protocols/oauth2) first to be able to run the API.
+* You need to obtain OAuth 2.0 client credentials from the [Google API Console Platform](https://developers.google.com/identity/protocols/oauth2) first to be able to run the authentication.
 
 * Obtain the google cloud oauth 2.0 client id and secret since we need those to fill out `.env`. 
 
