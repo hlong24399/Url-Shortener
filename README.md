@@ -10,7 +10,7 @@
 
 
 ## Install requirement
-**It is recommended to work in `venv`- [python virtual environment](https://docs.python.org/3/tutorial/venv.html) to avoid any collisions with your machine's python configuration**
+**It is highly recommended to work in `venv`- [python virtual environment](https://docs.python.org/3/tutorial/venv.html) to avoid any collisions with your machine's python configuration**
 
 Execute the command below to install requirement packages:
 
